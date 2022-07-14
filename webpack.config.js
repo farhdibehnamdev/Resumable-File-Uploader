@@ -9,7 +9,14 @@ module.exports = {
     clean: true,
     filename: "[name].js",
   },
-
+  devServer: {
+    static: { directory: path.resolve(__dirname, "dist") },
+    port: 5500,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {

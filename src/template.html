@@ -9,11 +9,34 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/phosphor-icons"></script>
     <title>Resumable File Uploader</title>
   </head>
   <body>
     <div class="file-uploader">
-      <input type="file" />
+      <div class="file-uploader__container">
+        <div class="file-uploader__zone">
+          <i class="ph-paperclip-light ph-lg"></i>
+          <label for="file-upload" class="file-uploader__add-file-label"
+            >Add file</label
+          >
+          <input
+            class="file-uploader__file-upload"
+            id="file-upload"
+            type="file"
+          />
+          <span class="file-uploader__drop-files"> or drop files here</span>
+        </div>
+        <ul class="file-uploader__uploaded-files">
+          <li class="file-uploader__file-status">
+            <span class="file-uploader__file-name-volume">
+              <span>Product Launch Timeline.png</span>
+              <span class="file-uploader__file-volume">122.6kb</span>
+            </span>
+            <i class="ph-x-light"></i>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

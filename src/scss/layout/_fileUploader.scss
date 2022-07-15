@@ -1,0 +1,50 @@
+.file-uploader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
+  width: 700px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  &__container {
+    padding: 50px;
+  }
+  &__zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border: 2px solid #e3e2e4;
+    border-radius: 10px;
+  }
+  &__add-file-label {
+    color: #1d9bde;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px 0 5px;
+  }
+  &__file-upload {
+    display: none;
+  }
+  &__drop-files {
+    color: var(--color);
+  }
+  &__uploaded-files {
+    display: flex;
+    align-items: center;
+  }
+  &__file-status {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  &__file-name-volume {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__file-volume {
+    color: var(--color);
+  }
+}

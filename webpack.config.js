@@ -1,36 +1,65 @@
 const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/script/index.js"),
+    bundle: path.resolve(__dirname, "src/script/index.ts"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    filename: "[name].js",
+    filename: "[name].[contenthash].js",
+    assetModuleFilename: "[name][ext]",
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+  },
+  devtool: "source-map",
   devServer: {
     static: { directory: path.resolve(__dirname, "dist") },
-    port: 5500,
+    port: 5501,
     open: true,
     hot: true,
     compress: true,
     historyApiFallback: true,
   },
+
   module: {
     rules: [
       {
-        test: [/\.(scss|css)$/, /\.s[ac]ss$/i],
-        use: ["style-loader", { options: { esModule: false } }, "css-loader"],
+        test: /\.(s(a|c)ss|css)$/,
+        use: [
+          "style-loader",
+          // { options: { esModule: false } },
+          "css-loader",
+          "sass-loader",
+        ],
       },
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         exclude: "/node_modules/",
-        use: {
-          loader: "babel-loader",
-          options: { presets: ["@babel/preset-env"] },
-        },
+        use: [
+          {
+            loader: "babel-loader",
+            // options: {
+            //   presets: ["solid"],
+            // },
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+          {
+            loader: "ts-loader",
+          },
+        ],
       },
     ],
   },
+  plugins: [
+    new HtmlWebPackPlugin({
+      title: "Resumable-File-Uploader",
+      filename: "index.html",
+      template: "src/template.html",
+    }),
+  ],
 };

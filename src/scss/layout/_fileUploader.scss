@@ -41,6 +41,12 @@
   &__uploaded-files {
     padding: 10px;
   }
+  &__file-status-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
   &__file-status {
     list-style: none;
     display: flex;
@@ -52,12 +58,15 @@
     color: var(--color-file-name);
   }
   &__file-name-volume {
+    width: 90%;
     display: flex;
     align-items: center;
-    gap: 25px;
+    padding: 10px;
   }
   &__file-volume {
     color: var(--color);
+    margin-left: auto;
+    margin-right: 10px;
   }
   &__close-file {
     color: var(--color);
@@ -70,5 +79,20 @@
     color: var(--color-retry-add-file);
     font-weight: 600;
     padding: 5px 10px 5px 10px;
+  }
+  &__upload-failed-background {
+    background-color: #fef5f6;
+  }
+  &__upload-failed {
+    color: #c45153;
+  }
+  &__icon-retry {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  &__hidden-element {
+    display: none;
+    margin-left: 10px;
   }
 }

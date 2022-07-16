@@ -82,6 +82,7 @@
   }
   &__upload-failed-background {
     background-color: #fef5f6;
+    border-radius: 2px;
   }
   &__upload-failed {
     color: #c45153;
@@ -94,5 +95,25 @@
   &__hidden-element {
     display: none;
     margin-left: 10px;
+  }
+
+  //  {
+  //   accent-color: #3edf82;
+  //   color: #ffffff;
+  // }
+  &__progressbar {
+    accent-color: #3edf82;
+    border: none;
+    width: 5em;
+    height: 0.5em;
+  }
+  &__progressbar::-webkit-progress-bar {
+    background-color: #eeeeee;
+    border-radius: 1em;
+  }
+
+  &__progressbar::-webkit-progress-value {
+    background-color: #3edf82 !important;
+    border-radius: 10px;
   }
 }

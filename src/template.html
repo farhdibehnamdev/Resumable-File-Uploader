@@ -21,11 +21,18 @@
           <label for="file-upload" class="file-uploader__add-file-label"
             >Add file</label
           >
-          <input
-            class="file-uploader__file-upload"
-            id="file-upload"
-            type="file"
-          />
+          <form
+            name="upload"
+            method="POST"
+            enctype="multipart/form-data"
+            action="/upload"
+          >
+            <input
+              class="file-uploader__file-upload"
+              id="file-upload"
+              type="file"
+            />
+          </form>
           <span class="file-uploader__drop-files"> or drop files here</span>
         </div>
         <ul class="file-uploader__uploaded-files">
@@ -126,5 +133,6 @@
         </ul>
       </div>
     </div>
+    <div id="log">Progress indication</div>
   </body>
 </html>
